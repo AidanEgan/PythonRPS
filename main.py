@@ -2,8 +2,7 @@
 import random
 triFecta = ['r','p','s']
 answers = ["DRAW!","YOU LOSER","YOU WIN"]
-def getInput(inputStr, message=""):
-    return (theInput[0] if theInput else getInput(inputStr, print("I need a response!"))) if (theInput := input(inputStr).lower()) else getInput(inputStr, print("I need a response!"))
+getInput = lambda inputStr, message="": (theInput[0] if theInput else getInput(inputStr, print("I need a response!"))) if (theInput := input(inputStr).lower()) else getInput(inputStr, print("I need a response!"))
 while triFecta:
     userInput = getInput("Do you choose rock, paper, or scissors? ")
     userFinalChoice = [x for x in range(len(triFecta)) if userInput == triFecta[x]][0] if userInput in triFecta else -1
